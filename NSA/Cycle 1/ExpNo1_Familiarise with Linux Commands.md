@@ -1,15 +1,15 @@
 # **Experiment No: 1**
 ## **Familiarise with Linux Commands**
 
-#### 1. Command to display the following message as such (Use ” and Newline).
-####    "Hi Everyone..
-####    We are starting Shell Scripting"
+##### 1. Command to display the following message as such (Use ” and Newline).
+#####    "Hi Everyone..
+#####    We are starting Shell Scripting"
 
 ```bash
 echo -e "Hi Everyone..\nWe are starting Shell Scripting"
 ```
 
-#### 2. Read your name from the keyboard and display it.
+##### 2. Read your name from the keyboard and display it.
 
 ```bash
 echo "Enter your name:"
@@ -17,18 +17,18 @@ read name
 echo "Your name is: $name"
 ```
 
-#### 3. Create the directory structure dir1/dir4 and dir1/dir2/dir3 with a single command and then change directory to dir3
+##### 3. Create the directory structure dir1/dir4 and dir1/dir2/dir3 with a single command and then change directory to dir3
 
 ```bash
 mkdir -p dir1/dir4 dir1/dir2/dir3 && cd dir1/dir2/dir3
 ```
 
-#### 4. Create a file testfile1 using nano.
-####    Display the file
-####        (i) starting with the first 10 lines and
-####        (ii) starting with the 10th line with provision for
-####            a) Scrolling Up
-####            b) Scrolling Up and Down
+##### 4. Create a file testfile1 using nano.
+#####    Display the file
+#####        (i) starting with the first 10 lines and
+#####        (ii) starting with the 10th line with provision for
+#####            a) Scrolling Up
+#####            b) Scrolling Up and Down
 
 ```bash
 # Create testfile1 
@@ -45,24 +45,24 @@ tail -n +10 testfile1 | less
 
 ```
 
-#### 5. Get the manual page of ’ls’ command. Search for the word ”alphabetic”. Find the next occurrence and then find the previous occurrence.
+##### 5. Get the manual page of ’ls’ command. Search for the word ”alphabetic”. Find the next occurrence and then find the previous occurrence.
 
 ```bash
 man ls | grep "alphabetic"
 ```
 
-#### 6. Create 2 files testfile2 and testfile3 using nano.
-#### (a) Modify the permissions of testfile2 using symbolic mode
-####        i. Add read permission to others
-####        ii. revoke write from owner
-####        iii. set only execute to Group.
-####        iv. add write to owner, revoke read from others and set read onlyto group.
-####        v. set read and write to all
-#### (b) Modify the permissions of testfile3 using numeric mode
-####        i. Set read and write to all
-####        ii. set read,write and execute to owner, read and execute to group and read only to others
-#### (c) Set the permissions of testfile2 the same as that of testfile3
-#### (d) Set the permissions of the tree (the directory, its children , grand children, etc.) rooted at dir1 (Qn. 3) directory to 664
+##### 6. Create 2 files testfile2 and testfile3 using nano.
+##### (a) Modify the permissions of testfile2 using symbolic mode
+#####        i. Add read permission to others
+#####        ii. revoke write from owner
+#####        iii. set only execute to Group.
+#####        iv. add write to owner, revoke read from others and set read onlyto group.
+#####        v. set read and write to all
+##### (b) Modify the permissions of testfile3 using numeric mode
+#####        i. Set read and write to all
+#####        ii. set read,write and execute to owner, read and execute to group and read only to others
+##### (c) Set the permissions of testfile2 the same as that of testfile3
+##### (d) Set the permissions of the tree (the directory, its children , grand children, etc.) rooted at dir1 (Qn. 3) directory to 664
 
 
 ```bash
@@ -87,26 +87,26 @@ chmod --reference=testfile3 testfile2
 chmod -R 664 dir1
 ```
 
-#### 7. Change the owner and group of the directory tree from dir2 to student.
+##### 7. Change the owner and group of the directory tree from dir2 to student.
 ```bash
 chown -R student:student dir2
 ```
 
-#### 8. Display Current Directory
+##### 8. Display Current Directory
 
 ```bash
 pwd
 ```
 
-#### 9. List Files and Folders
-#### (a) List the contents of dir1 (Qn. 3) and all its descendants
-#### (b) List the contents of dir3 (Qn. 3) in
-####        1. Alphabetical Order
-####        2.Sorted on Time of modification, newest first
-####        3.Sorted on Size
-####        4.Reverse of all above
-####        5.Long listing of files Sorted on Size with smallest first and size
-####        6.displayed in human readable form
+##### 9. List Files and Folders
+##### (a) List the contents of dir1 (Qn. 3) and all its descendants
+##### (b) List the contents of dir3 (Qn. 3) in
+#####        1. Alphabetical Order
+#####        2.Sorted on Time of modification, newest first
+#####        3.Sorted on Size
+#####        4.Reverse of all above
+#####        5.Long listing of files Sorted on Size with smallest first and size
+#####        6.displayed in human readable form
 ```bash
 # (a) 
 ls -R dir1
@@ -126,8 +126,8 @@ ls -lhS dir3
 ls -lh --sort=size dir3
 ```
 
-#### 10. (a) Execute ls and store the output to a file lsoutput
-####     (b) Execute ls -l and add the output to lsoutput, at the end.
+##### 10. (a) Execute ls and store the output to a file lsoutput
+#####     (b) Execute ls -l and add the output to lsoutput, at the end.
 
 ```bash
 #  a)
@@ -137,18 +137,18 @@ ls > lsoutput
 ls -l >> lsoutput
 ```
 
-#### 11. Execute ls -l and feed the result to less command, to scroll through the directory listing.
+##### 11. Execute ls -l and feed the result to less command, to scroll through the directory listing.
 ```bash
 ls -l | less
 ```
 
-#### 12. (a) Create a file file1 containing the word ”Hello,” using cat and output redirection
-#### (b) Create another file file2 containing the word ”, Greetings!!”
-#### (c) Display the sentence,
-####    Hello,
-####    yourname
-####    , Greetings!!
-#### using cat, by concatenating file1, Standard Input and file2
+##### 12. (a) Create a file file1 containing the word ”Hello,” using cat and output redirection
+##### (b) Create another file file2 containing the word ”, Greetings!!”
+##### (c) Display the sentence,
+#####    Hello,
+#####    yourname
+#####    , Greetings!!
+##### using cat, by concatenating file1, Standard Input and file2
 
 ```bash
 # (a)
@@ -161,14 +161,14 @@ cat > file2 # write contents
 cat file1 file2
 ```
 
-#### 13. Copy the file file1 to newfile.
-#### (a) If newfile already exists, it should be replaced.
-#### (b) If newfile already exists, it should not be replaced.
-#### (c) If newfile already exists, it should be replaced, but only with the consent of the user.
-#### (d) If newfile already exists, it should be replaced only if its contents is older than that of newfile.
-#### (e) Even if newfile is read only.
-#### (f) Create a link instead of copying.
-#### (g) Copy the entire directory tree from dir1 of Cycle 1 to a new directory dir5
+##### 13. Copy the file file1 to newfile.
+##### (a) If newfile already exists, it should be replaced.
+##### (b) If newfile already exists, it should not be replaced.
+##### (c) If newfile already exists, it should be replaced, but only with the consent of the user.
+##### (d) If newfile already exists, it should be replaced only if its contents is older than that of newfile.
+##### (e) Even if newfile is read only.
+##### (f) Create a link instead of copying.
+##### (g) Copy the entire directory tree from dir1 of Cycle 1 to a new directory dir5
 
 ```bash
 # (a) 
@@ -193,13 +193,13 @@ ln file1 newfile
 cp -r dir1 dir5
 ```
 
-#### 14. Create a new directory, dir6 inside dir1
-####    (a) Move all files in dir5 into it.
-####    (b) Rename the file newfile in Qn.4 to oldfile
-####    (c) Move the file file1 in Qn.4 to dir6 with the name file3
-####    (d) Delete all files where name starts with a vowel character,upper or lower case.
-####    (e) Delete all files where the name is at least 3 characters long.
-####    (f) Delete all hidden folders, and files.
+##### 14. Create a new directory, dir6 inside dir1
+#####    (a) Move all files in dir5 into it.
+#####    (b) Rename the file newfile in Qn.4 to oldfile
+#####    (c) Move the file file1 in Qn.4 to dir6 with the name file3
+#####    (d) Delete all files where name starts with a vowel character,upper or lower case.
+#####    (e) Delete all files where the name is at least 3 characters long.
+#####    (f) Delete all hidden folders, and files.
 
 ```bash
 # Create a new directory dir6 inside dir1
@@ -225,9 +225,9 @@ find . -type f -name '???*' -delete
 rm -rf .*
 ```
 
-#### 15. Using cut filter
-####    (a) Display the filenames from ls -l assuming filenames start at column 50.
-####    (b) Display user Id and user name of all users from /etc/passwd. (fields 1 and 3)
+##### 15. Using cut filter
+#####    (a) Display the filenames from ls -l assuming filenames start at column 50.
+#####    (b) Display user Id and user name of all users from /etc/passwd. (fields 1 and 3)
 
 ```bash
 # (a) 
@@ -237,7 +237,7 @@ ls -l | cut -c50-
 cut -d: -f1,3 /etc/passwd
 ```
 
-#### 16. Create 3 files containing name, age and marks of 5 students respectively and paste them into a single csv (comma separated values) file.
+##### 16. Create 3 files containing name, age and marks of 5 students respectively and paste them into a single csv (comma separated values) file.
 
 ```bash
 cat > name # write names of 5 students
@@ -247,11 +247,11 @@ cat > marks # write marks of 5 students
 paste -d',' file1 file2 file3 > combined.csv
 ```
 
-#### 17.Using find
-####    (a) piped with wc, display the number of files in a directory that starts with the letter a
-####    (b) Delete all .c files in the parent directory
-####    (c) Copy all files that starts with a to dir2
-####    (d) Display files in the current directory that were modified in the last 30 minutes.
+##### 17.Using find
+#####    (a) piped with wc, display the number of files in a directory that starts with the letter a
+#####    (b) Delete all .c files in the parent directory
+#####    (c) Copy all files that starts with a to dir2
+#####    (d) Display files in the current directory that were modified in the last 30 minutes.
 
 ```bash
 # (a) 
@@ -267,12 +267,12 @@ find . -type f -name 'a*' -exec cp {} dir2 \;
 find . -mmin -30
 ```
 
-#### 18.Use head and tail piped with cat /etc/passwd to display the details of
-####    (a) The first 12 users in the system.
-####    (b) The last 7 users in the system.
-####    (c) All but the first 3.
-####    (d) All but the last 5.
-####    (e) Only the 9 th .
+##### 18.Use head and tail piped with cat /etc/passwd to display the details of
+#####    (a) The first 12 users in the system.
+#####    (b) The last 7 users in the system.
+#####    (c) All but the first 3.
+#####    (d) All but the last 5.
+#####    (e) Only the 9 th .
 
 ```bash
 # (a) 
@@ -291,16 +291,16 @@ head /etc/passwd |head -n -5
 head /etc/passwd |head -9|tail -1
 ```
 
-#### 19. Use Grep
-#### (a) Display all lines in a file that contains the string abc
-#### (b) Display all lines in a file that does not contain the string abc
-#### (c) List names of all .c files that contains a printf
-#### (d) List names of all .c files that does not contain a printf
-#### (e) Display the number of #include statements in each .c file.
-#### (f) Display the Line numbers of printf in a .c file.
-#### (g) List names of all files in the directory tree that contain a printf.
-#### (h) Display the context of every printf in a .c file. i.e., n lines before and after every printf.
-#### (i) ls -l starts with d for directories. Use ls -l piped with grep & cut to display the names of all directories in the current directory.
+##### 19. Use Grep
+##### (a) Display all lines in a file that contains the string abc
+##### (b) Display all lines in a file that does not contain the string abc
+##### (c) List names of all .c files that contains a printf
+##### (d) List names of all .c files that does not contain a printf
+##### (e) Display the number of #include statements in each .c file.
+##### (f) Display the Line numbers of printf in a .c file.
+##### (g) List names of all files in the directory tree that contain a printf.
+##### (h) Display the context of every printf in a .c file. i.e., n lines before and after every printf.
+##### (i) ls -l starts with d for directories. Use ls -l piped with grep & cut to display the names of all directories in the current directory.
 
 ```bash
 # (a)
@@ -330,9 +330,9 @@ grep -C 5 'printf' file.c
 # (i)
 ls -l | grep '^d'
 ```
-#### 20. Using Expr 
-#### (a) Read two integers X and Y . Display the sum, difference, product, quotient and remainder of these variables.
-#### (b) Read a string, S, a position, p and a length l. Display the substring of length l starting at position p from the string S
+##### 20. Using Expr 
+##### (a) Read two integers X and Y . Display the sum, difference, product, quotient and remainder of these variables.
+##### (b) Read a string, S, a position, p and a length l. Display the substring of length l starting at position p from the string S
 
 ```bash
 # (a)
